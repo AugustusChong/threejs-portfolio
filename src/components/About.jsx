@@ -62,10 +62,12 @@ const About = () => {
   );
 };
 
+const AboutWithWrapper = SectionWrapper(About, "about");
+
 ServiceCard.propTypes = {
   index: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   icon: PropTypes.node.isRequired,
 };
 
-export default SectionWrapper(About, "about");
+export default AboutWithWrapper;
