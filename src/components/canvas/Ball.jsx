@@ -19,11 +19,12 @@ const Ball = (props) => {
       <ambientLight intensity={0.3} />
       <directionalLight position={[0, 0, 0.1]} />
       <mesh castShadow receiveShadow scale={4}>
-        <sphereBufferGeometry args={[0.7, 30, 30]} />
+        <sphereGeometry args={[0.7, 30, 30]} />
         <meshStandardMaterial
           color="#fff8eb"
           polygonOffset
           polygonOffsetFactor={-5}
+          roughness={0.5}
         />
         <Decal
           position={[0, 0, 0.9]}
@@ -38,7 +39,7 @@ const Ball = (props) => {
 
 const BallCanvas = ({ icon }) => {
   return (
-    <Canvas frameLoop="always" gl={{ preserveDrawingBuffer: true }}>
+    <Canvas frameloop="always" gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} enablePan={false} />
         <Ball imgUrl={icon} />
