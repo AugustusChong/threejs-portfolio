@@ -1,5 +1,4 @@
-// import React, {useEffect} from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
@@ -8,6 +7,50 @@ import { logo, menu, close } from "../assets";
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const aboutSection = document.getElementById("about");
+      const workSection = document.getElementById("work");
+      const techSection = document.getElementById("tech");
+      const contactSection = document.getElementById("contact");
+      const scrollPosition = window.scrollY;
+      console.log(scrollPosition);
+      console.log(
+        "about",
+        aboutSection.getBoundingClientRect().top + scrollPosition
+      );
+
+      if (
+        scrollPosition >=
+          aboutSection.getBoundingClientRect().top + scrollPosition - 44 &&
+        scrollPosition <
+          workSection.getBoundingClientRect().top + scrollPosition - 60
+      ) {
+        setActive("About");
+      } else if (
+        scrollPosition >=
+          workSection.getBoundingClientRect().top + scrollPosition &&
+        scrollPosition <
+          techSection.getBoundingClientRect().top + scrollPosition - 100
+      ) {
+        setActive("Work");
+      } else if (
+        scrollPosition >=
+        contactSection.getBoundingClientRect().top + scrollPosition - 100
+      ) {
+        setActive("Contact");
+      } else {
+        setActive("");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [active]);
 
   return (
     <nav
