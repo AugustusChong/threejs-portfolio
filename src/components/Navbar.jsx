@@ -37,7 +37,7 @@ const Navbar = () => {
         setActive("Work");
       } else if (
         scrollPosition >=
-        contactSection.getBoundingClientRect().top + scrollPosition - 100
+        contactSection.getBoundingClientRect().top + scrollPosition - 372
       ) {
         setActive("Contact");
       } else {
