@@ -20,7 +20,7 @@ const ExperienceCard = ({ experience }) => (
       <div className="flex justify-center items-center w-full h-full">
         <img
           src={experience.icon}
-          alt={experience.company_name}
+          alt={experience.companyName}
           className="w-[60%] h-[60%] object-contain"
         />
       </div>
@@ -32,7 +32,7 @@ const ExperienceCard = ({ experience }) => (
         className="text-secondary text-[16px] font-semibold"
         style={{ margin: 0 }}
       >
-        {experience.company_name}
+        {experience.companyName}
       </p>
     </div>
     <ul className="mt-5 list-disc ml-5 space-y-2">
@@ -71,7 +71,7 @@ const ExperienceWithWrapper = SectionWrapper(Experience, "work");
 ExperienceCard.propTypes = {
   experience: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    company_name: PropTypes.string.isRequired,
+    companyName: PropTypes.string.isRequired,
     icon: PropTypes.node.isRequired,
     iconBg: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
