@@ -4,6 +4,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
+import "@dotlottie/player-component";
 import { styles } from "../styles";
 import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
@@ -24,7 +25,14 @@ const ServiceCard = ({ index, title, icon }) => {
           }}
           className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
         >
-          <img src={icon} alt={title} className="w-16 h-16 object-contain" />
+          <div className="w-36 h-36 object-contain">
+            <dotLottie-player
+              autoplay
+              loop
+              speed={1}
+              src={icon}
+            ></dotLottie-player>
+          </div>
           <h3 className="text-white text-[20px] font-bold text-center">
             {title}
           </h3>
