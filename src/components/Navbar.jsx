@@ -15,11 +15,6 @@ const Navbar = () => {
       const techSection = document.getElementById("tech");
       const contactSection = document.getElementById("contact");
       const scrollPosition = window.scrollY;
-      console.log(scrollPosition);
-      console.log(
-        "about",
-        aboutSection.getBoundingClientRect().top + scrollPosition
-      );
 
       if (
         scrollPosition >=
