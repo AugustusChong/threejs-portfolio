@@ -61,6 +61,8 @@ const ComputersCanvas = () => {
           enablePan={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
+          autoRotate
+          autoRotateSpeed={-3}
         />
         <Computers isMobile={isMobile} />
       </Suspense>
