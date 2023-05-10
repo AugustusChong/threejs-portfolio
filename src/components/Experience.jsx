@@ -6,15 +6,18 @@ import {
 import { motion } from "framer-motion";
 import "react-vertical-timeline-component/style.min.css";
 import { styles } from "../styles";
-import { experiences } from "../constants";
+import { experiences, linkedIn } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
-import { linkedin } from "../assets";
 
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
-    contentStyle={{ background: "#4b6489", color: "#fff" }}
-    contentArrowStyle={{ borderRight: "7px solid #232631" }}
+    contentStyle={{
+      background: "#4b6489",
+      color: "#fff",
+      boxShadow: `0 -3.5px 0 -0.55px ${experience.iconBg}`,
+    }}
+    contentArrowStyle={{ borderRight: "7px solid #858585" }}
     date={experience.date}
     iconStyle={{ background: experience.iconBg }}
     icon={
@@ -48,13 +51,13 @@ const ExperienceCard = ({ experience }) => (
     </ul>
     <div className="mt-5 flex justify-center items-center">
       <a
-        href="https://www.linkedin.com/in/augustuschong/details/experience/"
+        href={linkedIn.url}
         target="_blank"
         rel="noopener noreferrer"
         className="absolute bottom-2 right-2 flex justify-center items-center"
       >
         <img
-          src={linkedin}
+          src={linkedIn.icon}
           alt="LinkedIn"
           className="w-8 h-8 hover:scale-[1.3]"
         />
