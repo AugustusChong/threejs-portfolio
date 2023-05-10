@@ -27,7 +27,7 @@ const ExperienceCard = ({ experience }) => (
       </div>
     }
   >
-    <div>
+    <div className="relative">
       <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
       <p
         className="text-secondary text-[16px] font-semibold"
@@ -51,11 +51,12 @@ const ExperienceCard = ({ experience }) => (
         href="https://www.linkedin.com/in/augustuschong/details/experience/"
         target="_blank"
         rel="noopener noreferrer"
+        className="absolute bottom-3 right-3 flex justify-center items-center"
       >
         <img
           src={linkedin}
           alt="LinkedIn"
-          className="w-10 h-10 hover:scale-110"
+          className="w-8 h-8 hover:scale-[1.3]"
         />
       </a>
     </div>
