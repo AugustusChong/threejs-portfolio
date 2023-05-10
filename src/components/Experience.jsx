@@ -52,7 +52,11 @@ const ExperienceCard = ({ experience }) => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src={linkedin} alt="LinkedIn" className="w-10 h-10" />
+        <img
+          src={linkedin}
+          alt="LinkedIn"
+          className="w-10 h-10 hover:scale-110"
+        />
       </a>
     </div>
   </VerticalTimelineElement>
