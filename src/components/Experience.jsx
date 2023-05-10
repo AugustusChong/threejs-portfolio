@@ -27,7 +27,7 @@ const ExperienceCard = ({ experience }) => (
       </div>
     }
   >
-    <div className="relative">
+    <div>
       <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
       <p
         className="text-secondary text-[16px] font-semibold"
@@ -40,7 +40,7 @@ const ExperienceCard = ({ experience }) => (
       {experience.points.map((point, index) => (
         <li
           key={`experience-point-${index}`}
-          className="text-white-100 text-[14px] pl-1 tracking-wider"
+          className="text-white-100 text-[14px] pl-1 tracking-wider text-justify"
         >
           {point}
         </li>
@@ -51,7 +51,7 @@ const ExperienceCard = ({ experience }) => (
         href="https://www.linkedin.com/in/augustuschong/details/experience/"
         target="_blank"
         rel="noopener noreferrer"
-        className="absolute bottom-3 right-3 flex justify-center items-center"
+        className="absolute bottom-2 right-2 flex justify-center items-center"
       >
         <img
           src={linkedin}
