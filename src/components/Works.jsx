@@ -7,14 +7,7 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({
-  index,
-  name,
-  description,
-  tags,
-  image,
-  source_code_link,
-}) => {
+const ProjectCard = ({ index, name, description, tags, image, githubRepo }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
@@ -34,7 +27,7 @@ const ProjectCard = ({
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             <div
               onClick={() => {
-                window.open(source_code_link, "_blank", "noopener noreferrer");
+                window.open(githubRepo, "_blank", "noopener noreferrer");
               }}
               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110"
             >
@@ -50,14 +43,14 @@ const ProjectCard = ({
           <h3 className="text-white font-bold text-[24px] text-center">
             {name}
           </h3>
-          <p className="mt-2 text-secondary text-[14px] text-center">
+          <p className="mt-2 text-secondary text-[15px] text-justify tracking-tighter">
             {description}
           </p>
         </div>
         <div className="mt-4 flex flex-wrap gap-2 justify-center">
           {tags.map((tag) => (
             <p key={tag.name} className={`text-[14px] ${tag.color}`}>
-              #{tag.name}
+              @{tag.name}
             </p>
           ))}
         </div>
@@ -107,7 +100,7 @@ ProjectCard.propTypes = {
     })
   ).isRequired,
   image: PropTypes.node.isRequired,
-  source_code_link: PropTypes.string.isRequired,
+  githubRepo: PropTypes.string.isRequired,
 };
 
 export default WorksWithWrapper;
