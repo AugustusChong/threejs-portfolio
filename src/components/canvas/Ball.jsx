@@ -11,8 +11,8 @@ import {
 } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
-const Ball = (props) => {
-  const [decal] = useTexture([props.imgUrl]);
+const Ball = ({ image }) => {
+  const [decal] = useTexture([image]);
 
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
@@ -42,7 +42,7 @@ const BallCanvas = ({ icon }) => {
     <Canvas frameloop="always" gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} enablePan={false} />
-        <Ball imgUrl={icon} />
+        <Ball image={icon} />
       </Suspense>
       <Preload all />
     </Canvas>
@@ -50,7 +50,7 @@ const BallCanvas = ({ icon }) => {
 };
 
 Ball.propTypes = {
-  imgUrl: PropTypes.node.isRequired,
+  image: PropTypes.node.isRequired,
 };
 
 BallCanvas.propTypes = {
