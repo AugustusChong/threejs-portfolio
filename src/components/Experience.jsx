@@ -9,6 +9,7 @@ import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
+import { linkedin } from "../assets";
 
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
@@ -45,6 +46,15 @@ const ExperienceCard = ({ experience }) => (
         </li>
       ))}
     </ul>
+    <div className="mt-5 flex justify-center items-center">
+      <a
+        href="https://www.linkedin.com/in/augustuschong/details/experience/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={linkedin} alt="LinkedIn" className="w-10 h-10" />
+      </a>
+    </div>
   </VerticalTimelineElement>
 );
 
