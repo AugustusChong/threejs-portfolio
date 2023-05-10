@@ -6,7 +6,7 @@ import {
 import { motion } from "framer-motion";
 import "react-vertical-timeline-component/style.min.css";
 import { styles } from "../styles";
-import { experiences, linkedIn } from "../constants";
+import { experiences, linkedinData } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 
@@ -51,13 +51,13 @@ const ExperienceCard = ({ experience }) => (
     </ul>
     <div className="mt-5 flex justify-center items-center">
       <a
-        href={linkedIn.url}
+        href={linkedinData.url}
         target="_blank"
         rel="noopener noreferrer"
         className="absolute bottom-2 right-2 flex justify-center items-center"
       >
         <img
-          src={linkedIn.icon}
+          src={linkedinData.icon}
           alt="LinkedIn"
           className="w-8 h-8 hover:scale-[1.3]"
         />
