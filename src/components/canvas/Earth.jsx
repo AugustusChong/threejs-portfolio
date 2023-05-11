@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload } from "@react-three/drei";
 import CanvasLoader from "../Loader";
-import { EarthModel } from "../../../public/earth/EarthModel";
+import { EarthModel } from "../models";
 
 const EarthCanvas = () => {
   return (

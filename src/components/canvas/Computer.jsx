@@ -3,7 +3,7 @@ import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload } from "@react-three/drei";
 import CanvasLoader from "../Loader";
-import { LaptopModel } from "../../../public/laptop/LaptopModel";
+import { LaptopModel } from "../models";
 
 const ComputerCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
