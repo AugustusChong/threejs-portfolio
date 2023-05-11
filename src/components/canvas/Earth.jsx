@@ -1,23 +1,16 @@
 /* eslint react/no-unknown-property: 0 */
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import { OrbitControls, Preload } from "@react-three/drei";
 import CanvasLoader from "../Loader";
-
-const Earth = () => {
-  const earth = useGLTF("./earth/scene.gltf");
-
-  return (
-    <primitive object={earth.scene} scale={2} position-y={0} rotation-y={0} />
-  );
-};
+import { EarthModel } from "../../../public/earth/EarthModel";
 
 const EarthCanvas = () => {
   return (
     <Canvas
       shadows
       frameloop="demand"
-      gl={{ preserveDrawingBuffer: true }}
+      gl={{ antialias: false, preserveDrawingBuffer: true }}
       camera={{
         fov: 50,
         near: 0.1,
@@ -33,7 +26,7 @@ const EarthCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Earth />
+        <EarthModel scale={2} position-y={0} rotation-y={0} />
       </Suspense>
       <Preload all />
     </Canvas>

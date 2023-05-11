@@ -1,35 +1,11 @@
 /* eslint react/no-unknown-property: 0 */
 import { Suspense, useEffect, useState } from "react";
-import PropTypes from "prop-types";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import { OrbitControls, Preload } from "@react-three/drei";
 import CanvasLoader from "../Loader";
+import { LaptopModel } from "../../../public/laptop/LaptopModel";
 
-const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./laptop/scene.gltf");
-  return (
-    <mesh>
-      <hemisphereLight intensity={0.15} groundColor="black" />
-      <pointLight intensity={1} />
-      <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
-        penumbra={1}
-        intensity={1}
-        castShadow
-        shadow-mapSize={1024}
-      />
-      <primitive
-        object={computer.scene}
-        scale={isMobile ? 1 : 1.5}
-        position={isMobile ? [0, -3, 0] : [0, -3.25, 0]}
-        rotation={[0, -0.25, -0.25]}
-      />
-    </mesh>
-  );
-};
-
-const ComputersCanvas = () => {
+const ComputerCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -64,15 +40,15 @@ const ComputersCanvas = () => {
           autoRotate
           autoRotateSpeed={-3}
         />
-        <Computers isMobile={isMobile} />
+        <LaptopModel
+          position={isMobile ? [0, -3, 0] : [0, -3.25, 0]}
+          scale={isMobile ? 1 : 1.5}
+          rotation={[0, -0.25, -0.25]}
+        />
       </Suspense>
       <Preload all />
     </Canvas>
   );
 };
 
-Computers.propTypes = {
-  isMobile: PropTypes.bool.isRequired,
-};
-
-export default ComputersCanvas;
+export default ComputerCanvas;
