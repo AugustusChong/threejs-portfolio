@@ -14,7 +14,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function LaptopModel(props) {
-  const { nodes, materials } = useGLTF("/laptop/laptop-scene-transformed.glb");
+  const { nodes, materials } = useGLTF("./laptop/laptop-scene-transformed.glb");
   return (
     <>
       <hemisphereLight intensity={0.15} groundColor="black" />
@@ -95,4 +95,4 @@ export function LaptopModel(props) {
   );
 }
 
-useGLTF.preload("/laptop/laptop-scene-transformed.glb");
+useGLTF.preload("./laptop/laptop-scene-transformed.glb");

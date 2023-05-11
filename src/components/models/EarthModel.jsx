@@ -16,7 +16,7 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 export function EarthModel(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(
-    "/earth/earth-scene-transformed.glb"
+    "./earth/earth-scene-transformed.glb"
   );
   // eslint-disable-next-line no-unused-vars
   const { actions } = useAnimations(animations, group);
@@ -982,4 +982,4 @@ export function EarthModel(props) {
   );
 }
 
-useGLTF.preload("/earth/earth-scene-transformed.glb");
+useGLTF.preload("./earth/earth-scene-transformed.glb");
