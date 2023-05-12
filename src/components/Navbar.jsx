@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../styles";
-import { navLinks } from "../constants";
+import { navLinks, resumeUrl } from "../constants";
 import { logo, menu, close } from "../assets";
 
 const Navbar = () => {
@@ -80,6 +80,15 @@ const Navbar = () => {
               <a href={`#${link.id}`}>{link.title}</a>
             </li>
           ))}
+          <li
+            id="resumeLink"
+            className="text-secondary hover:text-white text-[18px] font-medium cursor-pointer"
+            onClick={() => {
+              window.open(resumeUrl, "_blank", "noopener noreferrer");
+            }}
+          >
+            Resume
+          </li>
         </ul>
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <img
