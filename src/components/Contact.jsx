@@ -92,7 +92,6 @@ const Contact = () => {
             </div>
             <input
               {...register("name")}
-              type="text"
               placeholder={
                 !errors.name ? "Your Name" : "How will I know who you are?"
               }
@@ -111,7 +110,6 @@ const Contact = () => {
             </div>
             <input
               {...register("email")}
-              type="email"
               placeholder={
                 !errors.email
                   ? "Your Email"
