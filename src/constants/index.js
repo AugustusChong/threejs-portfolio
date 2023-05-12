@@ -1,265 +1,228 @@
 import {
-    mobile,
-    backend,
-    creator,
-    web,
-    javascript,
-    typescript,
-    html,
-    css,
-    reactjs,
-    redux,
-    tailwind,
-    nodejs,
-    mongodb,
-    git,
-    figma,
-    docker,
-    meta,
-    starbucks,
-    tesla,
-    shopify,
-    carrent,
-    jobit,
-    tripguide,
-    threejs,
-  } from "../assets";
-  
-  export const navLinks = [
-    {
-      id: "about",
-      title: "About",
-    },
-    {
-      id: "work",
-      title: "Work",
-    },
-    {
-      id: "contact",
-      title: "Contact",
-    },
-  ];
-  
-  const services = [
-    {
-      title: "Web Developer",
-      icon: web,
-    },
-    {
-      title: "React Native Developer",
-      icon: mobile,
-    },
-    {
-      title: "Backend Developer",
-      icon: backend,
-    },
-    {
-      title: "Content Creator",
-      icon: creator,
-    },
-  ];
-  
-  const technologies = [
-    {
-      name: "HTML 5",
-      icon: html,
-    },
-    {
-      name: "CSS 3",
-      icon: css,
-    },
-    {
-      name: "JavaScript",
-      icon: javascript,
-    },
-    {
-      name: "TypeScript",
-      icon: typescript,
-    },
-    {
-      name: "React JS",
-      icon: reactjs,
-    },
-    {
-      name: "Redux Toolkit",
-      icon: redux,
-    },
-    {
-      name: "Tailwind CSS",
-      icon: tailwind,
-    },
-    {
-      name: "Node JS",
-      icon: nodejs,
-    },
-    {
-      name: "MongoDB",
-      icon: mongodb,
-    },
-    {
-      name: "Three JS",
-      icon: threejs,
-    },
-    {
-      name: "git",
-      icon: git,
-    },
-    {
-      name: "figma",
-      icon: figma,
-    },
-    {
-      name: "docker",
-      icon: docker,
-    },
-  ];
-  
-  const experiences = [
-    {
-      title: "React.js Developer",
-      company_name: "Starbucks",
-      icon: starbucks,
-      iconBg: "#383E56",
-      date: "March 2020 - April 2021",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "React Native Developer",
-      company_name: "Tesla",
-      icon: tesla,
-      iconBg: "#E6DEDD",
-      date: "Jan 2021 - Feb 2022",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "Web Developer",
-      company_name: "Shopify",
-      icon: shopify,
-      iconBg: "#383E56",
-      date: "Jan 2022 - Jan 2023",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-    {
-      title: "Full stack Developer",
-      company_name: "Meta",
-      icon: meta,
-      iconBg: "#E6DEDD",
-      date: "Jan 2023 - Present",
-      points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
-      ],
-    },
-  ];
-  
-  const testimonials = [
-    {
-      testimonial:
-        "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-      name: "Sara Lee",
-      designation: "CFO",
-      company: "Acme Co",
-      image: "https://randomuser.me/api/portraits/women/4.jpg",
-    },
-    {
-      testimonial:
-        "I've never met a web developer who truly cares about their clients' success like Rick does.",
-      name: "Chris Brown",
-      designation: "COO",
-      company: "DEF Corp",
-      image: "https://randomuser.me/api/portraits/men/5.jpg",
-    },
-    {
-      testimonial:
-        "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-      name: "Lisa Wang",
-      designation: "CTO",
-      company: "456 Enterprises",
-      image: "https://randomuser.me/api/portraits/women/6.jpg",
-    },
-  ];
-  
-  const projects = [
-    {
-      name: "Car Rent",
-      description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
-      tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "mongodb",
-          color: "green-text-gradient",
-        },
-        {
-          name: "tailwind",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: carrent,
-      source_code_link: "https://github.com/",
-    },
-    {
-      name: "Job IT",
-      description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-      tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "restapi",
-          color: "green-text-gradient",
-        },
-        {
-          name: "scss",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: jobit,
-      source_code_link: "https://github.com/",
-    },
-    {
-      name: "Trip Guide",
-      description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-      tags: [
-        {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "supabase",
-          color: "green-text-gradient",
-        },
-        {
-          name: "css",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: tripguide,
-      source_code_link: "https://github.com/",
-    },
-  ];
-  
-  export { services, technologies, experiences, testimonials, projects };
+  immersed,
+  linkedin,
+  csharp,
+  dotnet,
+  html5,
+  javascript,
+  react,
+  redux,
+  threejs,
+  css3,
+  tailwind,
+  sass,
+  git,
+  analyticsDashboard,
+  threejsPortfolio,
+  tetrisRedux,
+} from "../assets";
+
+export const resumeUrl =
+  "https://docs.google.com/document/d/1LWTTC8dtXyYUog7hMWBIbREp3tQdb8EgQQaym9bglRM/edit?usp=sharing";
+
+export const navLinks = [
+  {
+    id: "about",
+    title: "About",
+  },
+  {
+    id: "work",
+    title: "Work",
+  },
+  {
+    id: "contact",
+    title: "Contact",
+  },
+];
+
+const services = [
+  {
+    title: "Web Developer",
+    icon: "../../src/assets/lottie/70888-website.lottie",
+  },
+  {
+    title: "Frontend Developer",
+    icon: "../../src/assets/lottie/68658-creative-3d-visual-animation-website-development.lottie",
+  },
+  {
+    title: "Backend Developer",
+    icon: "../../src/assets/lottie/99804-backend-blue.lottie",
+  },
+  {
+    title: "Software Engineer",
+    icon: "../../src/assets/lottie/63487-programming-computer.lottie",
+  },
+];
+
+const experiences = [
+  {
+    title: "Full Stack Software Engineer",
+    companyName: "Immersed",
+    icon: immersed,
+    iconBg: "#e0e0e0",
+    date: "Aug 2022 - Present",
+    points: [
+      "Develop and maintain an analytics dashboard for system administrators using React, .NET, and SQL.",
+      "Implement responsive design and ensure cross-browser compatibility.",
+      "Design and maintain a SQL relational database with multiple tables, stored procedures, and streamlined queries.",
+      "Build and implement RESTful APIs using .NET and C#.",
+      "Optimize performance and scalability for front-end and back-end.",
+      "Debug and troubleshoot issues across the entire stack.",
+      "Collaborate with a Scrum team to engage in code reviews, provide status updates, and offer constructive feedback to other developers.",
+    ],
+  },
+];
+
+const linkedinData = {
+  url: "https://www.linkedin.com/in/augustuschong/details/experience/",
+  icon: linkedin,
+};
+
+const technologies = [
+  {
+    name: "C#",
+    icon: csharp,
+  },
+  {
+    name: ".NET",
+    icon: dotnet,
+  },
+  {
+    name: "HTML 5",
+    icon: html5,
+  },
+  {
+    name: "JavaScript",
+    icon: javascript,
+  },
+  {
+    name: "React",
+    icon: react,
+  },
+  {
+    name: "Redux Toolkit",
+    icon: redux,
+  },
+  {
+    name: "Three JS",
+    icon: threejs,
+  },
+  {
+    name: "CSS 3",
+    icon: css3,
+  },
+  {
+    name: "Tailwind CSS",
+    icon: tailwind,
+  },
+  {
+    name: "SASS",
+    icon: sass,
+  },
+  {
+    name: "Git",
+    icon: git,
+  },
+];
+
+const projects = [
+  {
+    name: "Analytics Dashboard",
+    description:
+      "An analytics dashboard for Immersed, that allows system administrators to quickly see dynamically generated statistics in a visual format.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "dotnet",
+        color: "neon-purple-text-gradient",
+      },
+      {
+        name: "sqlserver",
+        color: "bright-red-text-gradient",
+      },
+    ],
+    image: analyticsDashboard,
+    githubRepo: "https://github.com/AugustusChong/immersed",
+  },
+  {
+    name: "This Website",
+    description:
+      "An interactive portfolio website utilizing Three.js to display animated 3D computer graphics. I had a lot of fun building this website and I hope you enjoy it!",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "threejs",
+        color: "bright-blue-text-gradient",
+      },
+      {
+        name: "tailwindcss",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: threejsPortfolio,
+    githubRepo: "https://github.com/AugustusChong/threejs-portfolio",
+  },
+  {
+    name: "Tetris Redux",
+    description:
+      "A Tetris clone built with React and Redux Toolkit. I built this project to learn more about Redux Toolkit and to practice using it to make a classic game.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "reduxtoolkit",
+        color: "light-purple-text-gradient",
+      },
+      {
+        name: "sass",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: tetrisRedux,
+    githubRepo: "https://github.com/AugustusChong/tetris-react",
+  },
+];
+
+const testimonials = [
+  {
+    testimonial:
+      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    name: "Sara Lee",
+    designation: "CFO",
+    company: "Acme Co",
+    image: "https://randomuser.me/api/portraits/women/4.jpg",
+  },
+  {
+    testimonial:
+      "I've never met a web developer who truly cares about their clients' success like Rick does.",
+    name: "Chris Brown",
+    designation: "COO",
+    company: "DEF Corp",
+    image: "https://randomuser.me/api/portraits/men/5.jpg",
+  },
+  {
+    testimonial:
+      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+    name: "Lisa Wang",
+    designation: "CTO",
+    company: "456 Enterprises",
+    image: "https://randomuser.me/api/portraits/women/6.jpg",
+  },
+];
+
+export {
+  services,
+  experiences,
+  linkedinData,
+  technologies,
+  projects,
+  testimonials,
+};
