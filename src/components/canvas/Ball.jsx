@@ -19,8 +19,8 @@ const Ball = ({ image }) => {
       <ambientLight intensity={0.3} />
       <directionalLight position={[0, 0, 0.1]} />
       <mesh castShadow receiveShadow scale={4}>
-        <sphereGeometry args={[0.7, 30, 30]} />
-        <meshStandardMaterial color="#fff8eb" roughness={0.5} />
+        <sphereBufferGeometry args={[0.7, 20, 20]} />
+        <meshPhysicalMaterial color="#fff8eb" roughness={0.5} />
         <Decal
           position={[0, 0, 0.9]}
           rotation={[2 * Math.PI, 0, 6.25]}
