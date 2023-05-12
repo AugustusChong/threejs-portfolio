@@ -17,16 +17,10 @@ export function LaptopModel(props) {
   const { nodes, materials } = useGLTF("/laptop/laptop-scene-transformed.glb");
   return (
     <>
-      <hemisphereLight intensity={0.15} groundColor="black" />
+      <hemisphereLight intensity={1} groundColor="black" />
       <pointLight intensity={1} />
-      <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
-        penumbra={1}
-        intensity={1}
-        castShadow
-        shadow-mapSize={1024}
-      />
+      <ambientLight intensity={1} />
+
       <group {...props} dispose={null}>
         <group position={[-1.2, 0.1, 0]} rotation={[0, 0, -1.38]}>
           <mesh
