@@ -3,10 +3,10 @@ import logo from "./logo-color.svg";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
-import immersed from "./company/immersed.png";
+import immersed from "./company/immersed.webp";
 
-import linkedin from "./social/linkedin.png";
-import github from "./social/github.png";
+import linkedin from "./social/linkedin.webp";
+import github from "./social/github.webp";
 
 import csharp from "./tech/c-sharp.svg";
 import dotnet from "./tech/dotnet.svg";
@@ -20,9 +20,9 @@ import tailwind from "./tech/tailwind-css.svg";
 import sass from "./tech/sass.svg";
 import git from "./tech/git.svg";
 
-import analyticsDashboard from "./projects/analyticsDashboard.png";
-import threejsPortfolio from "./projects/threejsPortfolio.jpg";
-import tetrisRedux from "./projects/tetrisRedux.png";
+import analyticsDashboard from "./projects/analyticsDashboard.webp";
+import threejsPortfolio from "./projects/threejsPortfolio.webp";
+import tetrisRedux from "./projects/tetrisRedux.webp";
 
 export {
   logo,
