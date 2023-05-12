@@ -1,6 +1,4 @@
 /* eslint react/no-unknown-property: 0 */
-// eslint-disable-next-line no-unused-vars
-import React from "react";
 import PropTypes from "prop-types";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
