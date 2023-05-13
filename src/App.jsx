@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import DnaLoader from "./components/DnaLoader";
 
@@ -14,7 +14,18 @@ const Contact = lazy(() => import("./components/Contact"));
 const StarsCanvas = lazy(() => import("./components/canvas/Stars"));
 
 const App = () => {
-  return (
+  const [loading, setLoading] = useState(true);
+
+  const handleLoading = () => {
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("load", handleLoading);
+    return () => window.removeEventListener("load", handleLoading);
+  }, []);
+
+  return !loading ? (
     <BrowserRouter>
       <div className="relative z-0 bg-primary select-none">
         <Suspense fallback={<DnaLoader />}>
@@ -34,6 +45,8 @@ const App = () => {
         </Suspense>
       </div>
     </BrowserRouter>
+  ) : (
+    <DnaLoader />
   );
 };
 
