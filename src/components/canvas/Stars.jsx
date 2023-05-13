@@ -10,11 +10,11 @@ const Stars = (props) => {
 
   useEffect(() => {
     import("maath/random").then((random) => {
-      const newSphere = random.inSphere(new Float32Array(3000 * 3), {
+      const sphere = random.inSphere(new Float32Array(3000 * 3), {
         radius: 1,
         center: [0, 0, 0],
       });
-      setSphere(newSphere);
+      setSphere(sphere);
     });
   }, []);
 
