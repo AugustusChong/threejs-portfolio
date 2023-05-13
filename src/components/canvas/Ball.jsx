@@ -36,7 +36,11 @@ const BallCanvas = ({ icon }) => {
   return (
     <Canvas
       frameloop="always"
-      gl={{ antialias: true, preserveDrawingBuffer: false }}
+      gl={{
+        antialias: true,
+        powerPreference: "high-performance",
+        preserveDrawingBuffer: false,
+      }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} enablePan={false} />
