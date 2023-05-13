@@ -19,7 +19,7 @@ const Ball = ({ image }) => {
       <ambientLight intensity={0.3} />
       <directionalLight position={[0, 0, 0.1]} />
       <mesh castShadow receiveShadow scale={4}>
-        <sphereBufferGeometry args={[0.7, 20, 20]} />
+        <sphereBufferGeometry args={[0.7, 20, 16]} />
         <meshPhysicalMaterial color="#fff8eb" roughness={0.5} />
         <Decal
           position={[0, 0, 0.9]}
@@ -34,7 +34,10 @@ const Ball = ({ image }) => {
 
 const BallCanvas = ({ icon }) => {
   return (
-    <Canvas frameloop="always" gl={{ preserveDrawingBuffer: false }}>
+    <Canvas
+      frameloop="always"
+      gl={{ antialias: true, preserveDrawingBuffer: false }}
+    >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} enablePan={false} />
         <Ball image={icon} />
