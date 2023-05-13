@@ -1,15 +1,22 @@
 /* eslint react/no-unknown-property: 0 */
-import { useRef, Suspense } from "react";
+import { useRef, Suspense, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
-import * as random from "maath/random";
+// import * as random from "maath/random/dist/maath-random.esm";
 
 const Stars = (props) => {
   const ref = useRef();
-  const sphere = random.inSphere(new Float32Array(3000 * 3), {
-    radius: 1,
-    center: [0, 0, 0],
-  });
+  const [sphere, setSphere] = useState([]);
+
+  useEffect(() => {
+    import("maath/random").then((random) => {
+      const newSphere = random.inSphere(new Float32Array(3000 * 3), {
+        radius: 1,
+        center: [0, 0, 0],
+      });
+      setSphere(newSphere);
+    });
+  }, []);
 
   useFrame((_, delta) => {
     ref.current.rotation.x -= delta / 10;
