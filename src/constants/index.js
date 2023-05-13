@@ -38,19 +38,19 @@ export const navLinks = [
 const services = [
   {
     title: "Web Developer",
-    icon: "../../src/assets/lottie/70888-website.lottie",
+    icon: "/lottie/70888-website.lottie",
   },
   {
     title: "Frontend Developer",
-    icon: "../../src/assets/lottie/68658-creative-3d-visual-animation-website-development.lottie",
+    icon: "/lottie/68658-creative-3d-visual-animation-website-development.lottie",
   },
   {
     title: "Backend Developer",
-    icon: "../../src/assets/lottie/99804-backend-blue.lottie",
+    icon: "/lottie/99804-backend-blue.lottie",
   },
   {
     title: "Software Engineer",
-    icon: "../../src/assets/lottie/63487-programming-computer.lottie",
+    icon: "/lottie/63487-programming-computer.lottie",
   },
 ];
 
