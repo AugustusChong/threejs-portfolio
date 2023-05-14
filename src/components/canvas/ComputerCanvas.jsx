@@ -2,7 +2,7 @@
 import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload } from "@react-three/drei";
-import CanvasLoader from "./Loader";
+import CanvasLoader from "./CanvasLoader";
 import { LaptopModel } from "../models";
 
 const ComputerCanvas = () => {
