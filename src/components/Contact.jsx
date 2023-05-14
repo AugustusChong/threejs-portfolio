@@ -30,12 +30,7 @@ const Contact = () => {
     handleSubmit,
     reset,
     formState: { errors },
-    // watch,
   } = useForm({ resolver: yupResolver(validationSchema) });
-
-  // console.log(watch("name"));
-  // console.log(watch("email"));
-  // console.log(watch("message"));
 
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
