@@ -1,51 +1,47 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState } from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter } from "react-router-dom";
-import {
-  About,
-  Contact,
-  Experience,
-  // Feedbacks,
-  Hero,
-  Navbar,
-  Tech,
-  Works,
-  StarsCanvas,
-} from "./components";
 import DnaLoader from "./components/DnaLoader";
+const Navbar = lazy(() => import("./components/Navbar"));
+const Hero = lazy(() => import("./components/Hero"));
+const About = lazy(() => import("./components/About"));
+const Experience = lazy(() => import("./components/Experience"));
+const Tech = lazy(() => import("./components/Tech"));
+const Works = lazy(() => import("./components/Works"));
+// const Feedbacks = lazy(() => import("./components/Feedbacks"));
+const Contact = lazy(() => import("./components/Contact"));
+const StarsCanvas = lazy(() => import("./components/canvas/StarsCanvas"));
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
-
-  const handleLoading = () => {
-    setLoading(false);
+  const dnaSpinner = {
+    height: "180",
+    width: "180",
+    divClassName:
+      "fixed inset-0 z-50 flex justify-center items-center bg-black opacity-100",
+    wrapperClassName: "",
+    wrapperStyle: {},
   };
 
-  useEffect(() => {
-    window.addEventListener("load", handleLoading);
-    return () => window.removeEventListener("load", handleLoading);
-  }, []);
-
-  return !loading ? (
+  return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary select-none">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-          <Navbar />
-          <Hero />
-        </div>
-        <About />
-        <Experience />
-        <Tech />
-        <Works />
-        {/* <Feedbacks /> */}
-        <div className="relative z-0">
-          <Contact />
-          <StarsCanvas />
-        </div>
+        <Suspense fallback={<DnaLoader spinnerProps={dnaSpinner} />}>
+          <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+            <Navbar />
+            <Hero />
+          </div>
+          <About />
+          <Experience />
+          <Tech />
+          <Works />
+          {/* <Feedbacks /> */}
+          <div className="relative z-0">
+            <Contact />
+            <StarsCanvas />
+          </div>
+        </Suspense>
       </div>
     </BrowserRouter>
-  ) : (
-    <DnaLoader />
   );
 };
 
