@@ -11,7 +11,10 @@ import { SectionWrapper } from "../hoc";
 const ServiceCard = ({ index, title, icon }) => {
   return (
     <Tilt
-      options={{ max: 45, scale: 1, speed: 450 }}
+      tiltMaxAngleX={18}
+      tiltMaxAngleY={18}
+      scale={1.2}
+      transitionSpeed={450}
       className="xs:w-[250px] w-full"
     >
       <motion.div
