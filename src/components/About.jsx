@@ -11,12 +11,12 @@ import { SectionWrapper } from "../hoc";
 
 const ServiceCard = ({ index, title, icon }) => {
   const ref = useRef();
-  const readyHandler = () => {
-    ref.current.play();
-  };
 
   useEffect(() => {
     const dotlottiePlayer = ref.current;
+    const readyHandler = () => {
+      ref.current.play();
+    };
     dotlottiePlayer.addEventListener("ready", readyHandler);
 
     return () => {
