@@ -1,4 +1,5 @@
 /* eslint react/no-unknown-property: 0 */
+import { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
@@ -9,6 +10,20 @@ import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 
 const ServiceCard = ({ index, title, icon }) => {
+  const ref = useRef();
+  const readyHandler = () => {
+    ref.current.play();
+  };
+
+  useEffect(() => {
+    const dotlottiePlayer = ref.current;
+    dotlottiePlayer.addEventListener("ready", readyHandler);
+
+    return () => {
+      dotlottiePlayer.removeEventListener("ready", readyHandler);
+    };
+  }, []);
+
   return (
     <Tilt
       tiltMaxAngleX={18}
@@ -23,7 +38,7 @@ const ServiceCard = ({ index, title, icon }) => {
       >
         <div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
           <div className="w-36 h-36 object-contain">
-            <dotlottie-player autoplay loop speed={1} src={icon} />
+            <dotlottie-player loop speed={1} src={icon} ref={ref} />
           </div>
           <h3 className="text-white text-[20px] font-bold text-center">
             {title}
