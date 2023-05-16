@@ -119,6 +119,15 @@ const Navbar = () => {
                   <a href={`#${link.id}`}>{link.title}</a>
                 </li>
               ))}
+              <li
+                id="resumeLink"
+                className="text-secondary hover:text-white text-[16px] font-medium cursor-pointer"
+                onClick={() => {
+                  window.open(resumeUrl, "_blank", "noopener noreferrer");
+                }}
+              >
+                Resume
+              </li>
             </ul>
           </div>
         </div>
