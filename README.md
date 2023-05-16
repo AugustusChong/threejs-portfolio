@@ -6,6 +6,9 @@ Portfolio website showcasing 3D models with Three.js.
 
 This is a portfolio website that utilizes React, Three.js, and Tailwind CSS to show 3D models and interactive elements. 
 
+## Demo
+[Website Link](https://augustuschong.com)
+
 <!-- ## Getting Started
 
 ### Dependencies
