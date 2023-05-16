@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import "@dotlottie/player-component";
+import { useMediaQuery } from "react-responsive";
 import { styles } from "../styles";
 import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
@@ -11,12 +12,14 @@ import { SectionWrapper } from "../hoc";
 
 const ServiceCard = ({ index, title, icon }) => {
   const ref = useRef();
+  const isMobile = useMediaQuery({ query: "(max-width: 450px)" });
 
   useEffect(() => {
     const dotlottiePlayer = ref.current;
     const readyHandler = () => {
       ref.current.play();
     };
+
     dotlottiePlayer.addEventListener("ready", readyHandler);
 
     return () => {
@@ -28,9 +31,9 @@ const ServiceCard = ({ index, title, icon }) => {
     <Tilt
       tiltMaxAngleX={18}
       tiltMaxAngleY={18}
-      scale={1.2}
+      scale={isMobile ? 1.1 : 1.2}
       transitionSpeed={450}
-      className="xs:w-[250px] w-full"
+      className="xs:w-[240px] w-full max-[450px]:pl-2 max-[450px]:pr-2"
     >
       <motion.div
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
