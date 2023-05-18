@@ -1,12 +1,14 @@
 # threejs-portfolio
+<p align="center">Portfolio website showcasing 3D models with Three.js.</p>
 
-Portfolio website showcasing 3D models with Three.js.
+<img src="src/assets/projects/threejsPortfolio.webp" align="center" title="Portfolio" width="100%" height="auto" />
 
 ## Description
 
 This is a portfolio website that utilizes React, Three.js, and Tailwind CSS to show 3D models and interactive elements. 
 
 ## Demo
+
 [Portfolio Website](https://augustuschong.com)
 
 <!-- ## Getting Started
