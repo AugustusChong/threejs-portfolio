@@ -14,7 +14,7 @@ export default defineConfig({
     },
   },
   build: {
-    sourcemap: true,
+    sourcemap: false,
     rollupOptions: {
       onwarn(warning, warn) {
         if (
@@ -26,6 +26,10 @@ export default defineConfig({
         warn(warning);
       },
       output: {},
+      treeshake: {
+        preset: "recommended",
+        // moduleSideEffects: false,
+      },
     },
   },
 });
